@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head meta property="og:title" content="Invitación Bautizo Melody Arleth">
+<meta property="og:description" content="Te invitamos a celebrar este momento especial">
+<meta property="og:image" content="https://tusitio.com/invitacion.jpg">
+<meta property="og:type" content="website">>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Invitación Bautizo Animada</title>
+
+<style>
+
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(#e0f8ff,#ffffff);
+  overflow:hidden;
+  font-family:Arial;
+}
+
+/* FLORES */
+.flor{
+  position:absolute;
+  top:-50px;
+  animation:caer linear infinite;
+  font-size:25px;
+}
+
+@keyframes caer{
+  0%{transform:translateY(-50px) rotate(0deg);}
+  100%{transform:translateY(120vh) rotate(360deg);}
+}
+
+/* PALOMAS */
+.paloma{
+  position:absolute;
+  font-size:30px;
+  animation:volar linear infinite;
+}
+
+@keyframes volar{
+  0%{left:-50px; top:60px;}
+  50%{left:50vw; top:120px;}
+  100%{left:110vw; top:80px;}
+}
+
+/* SOBRE */
+
+.sobre{
+  position:relative;
+  width:300px;
+  height:200px;
+  cursor:pointer;
+  perspective:800px;
+}
+
+/* BASE */
+.base{
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:#6fa8dc;
+  border-radius:8px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* TAPA */
+.tapa{
+  position:absolute;
+  top:0;
+  width:100%;
+  height:100px;
+  background:#4a86e8;
+  border-radius:8px 8px 0 0;
+  transform-origin:top;
+  transition:transform 1s;
+}
+
+/* TAPA 2 */
+.tapa2{
+  position:absolute;
+  top:10px;
+  width:90%;
+  height:90px;
+  left:5%;
+  background:#5aa0e0;
+  border-radius:8px 8px 0 0;
+  transform-origin:top;
+  transition:transform 1s 0.2s;
+}
+
+/* CARTA */
+
+.carta{
+  position:absolute;
+  width:260px;
+  height:360px;
+  left:50%;
+  top:60px;
+  transform:translateX(-50%);
+  background:white;
+  border-radius:10px;
+  overflow:hidden;
+  opacity:0;
+  box-shadow:0 10px 25px rgba(0,0,0,0.3);
+  transition:top 1s,opacity 1s;
+}
+
+/* IMAGEN CARTA */
+
+.carta img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* SOBRE ABIERTO */
+
+.sobre.abierto .tapa{
+  transform:rotateX(-120deg);
+}
+
+.sobre.abierto .tapa2{
+  transform:rotateX(-120deg);
+}
+
+.sobre.abierto .carta{
+  top:-220px;
+  opacity:1;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- FLORES -->
+<div class="flor" style="left:10%; animation-duration:6s;">🌸</div>
+<div class="flor" style="left:30%; animation-duration:7s;">🌸</div>
+<div class="flor" style="left:50%; animation-duration:5s;">🌸</div>
+<div class="flor" style="left:70%; animation-duration:8s;">🌸</div>
+
+<!-- PALOMAS -->
+<div class="paloma" style="animation-duration:12s;">🕊️</div>
+<div class="paloma" style="animation-duration:14s; animation-delay:2s;">🕊️</div>
+
+<!-- SOBRE -->
+
+<div class="sobre" onclick="abrirSobre()">
+
+  <div class="base"></div>
+  <div class="tapa"></div>
+  <div class="tapa2"></div>
+
+  <!-- CARTA CON IMAGEN -->
+
+  <div class="carta">
+    <img src="invitacion.jpeg" alt="Invitación Bautizo">
+  </div>
+
+</div>
+
+<script>
+
+function abrirSobre(){
+ document.querySelector(".sobre").classList.toggle("abierto");
+}
+
+</script>
+
+</body>
+</html> 
